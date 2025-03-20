@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
-const bebe = readlineSync.question('Your answer: ');
-const gretting = (name) => `brain-games\nWelcome to the Brain Games!\nMay I have your name? ${name}\nHello, ${name}!`
 
-export {gretting}
+const askuserName = () => {
+  const name = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ', { defaultInput: 'tirion' });
+  return name;
+};
+const greeting = (name) => `Hello, ${name}!`;
+export { greeting, askuserName };
