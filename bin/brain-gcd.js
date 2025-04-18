@@ -40,6 +40,4 @@ const brainGcd = () => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-
-resolveQuestion('25 26');
 brainGcd();
