@@ -12,11 +12,10 @@ const generateProg = (start, step, progLength) => {
   return result;
 };
 
-
 const BrainprogressionGame = () => {
   const userName = askuserName();
   console.log(greeting(userName));
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log('What number is missing in the progression?');
   const progressionLength = 10;
   let start = Math.floor(Math.random() * 10);
   if (start < 5) {
