@@ -15,7 +15,7 @@ function logickGame(userName, questions, correctAnswer) {
   }
 
   console.log(`'${answerUser}' is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-  console.log(`'Let's try again, ${userName}!'`);
+  console.log(`Let's try again, ${userName}!'`);
 
   return false;
 }
