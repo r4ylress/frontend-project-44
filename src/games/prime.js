@@ -15,7 +15,7 @@ const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const brainPrime = () => {
   const userName = askuserName();
   console.log(greeting(userName));
-  console.log('"yes" if given number is prime. Otherwise answer "no".');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 for (let i = 0; i < 3; i += 1) {
     const question = random(1, 100);
     const correctAnswer = isPrime(question) ? 'yes' : 'no';
