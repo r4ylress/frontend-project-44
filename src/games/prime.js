@@ -23,7 +23,7 @@ for (let i = 0; i < 3; i += 1) {
     if (!isCorrect) {
       return;
     }
-    console.log(`Congratulations, ${userName}!`);
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 export default brainPrime;
