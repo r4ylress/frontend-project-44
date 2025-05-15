@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 import { greeting, askuserName } from '../cli.js';
+import getRandomInt from '../getRandomInt.js';
 
 const isEven = (num) => num % 2 === 0;
 
-const getRandomInt = (max) => Math.floor(Math.random() * max);
-const gameEven = () => {
+const brainEven = () => {
   const userName = askuserName();
   console.log(greeting(userName));
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -27,4 +27,4 @@ const gameEven = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default gameEven;
+export default brainEven;

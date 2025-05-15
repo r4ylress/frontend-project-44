@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import {
-    logickGame, askuserName, greeting,
-  } from '../index.js';
+import logickGame from "../index.js";
+import getRandomInt from "../getRandomInt.js";
+import { greeting, askuserName } from "../cli.js";
 
 const generateProg = (start, step, progLength) => {
   const result = [];
@@ -12,7 +12,7 @@ const generateProg = (start, step, progLength) => {
   return result;
 };
 
-const BrainprogressionGame = () => {
+const brainProgression = () => {
   const userName = askuserName();
   console.log(greeting(userName));
   console.log('What number is missing in the progression?');
@@ -22,7 +22,7 @@ const BrainprogressionGame = () => {
     start = 5;
   }
   for (let i = 0; i < 3; i += 1) {
-    const step = Math.floor(Math.random() * 5) + 1;
+    const step = getRandomInt(5) + 1;
     const progression = generateProg(start, step, progressionLength);
     const hiddenIndex = Math.floor(Math.random() * progressionLength);
     const correctAnswer = progression[hiddenIndex];
@@ -36,4 +36,4 @@ const BrainprogressionGame = () => {
 }
   console.log(`Congratulations, ${userName}!`);
 };
-export default BrainprogressionGame;
+export default brainProgression;

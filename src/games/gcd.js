@@ -1,15 +1,14 @@
-import {
-  logickGame, askuserName, greeting,
-} from '../index.js';
+import logickGame from '../index.js';
+import getRandomInt from '../getRandomInt.js';
+import { askuserName, greeting } from '../cli.js';
 
-const getRandomInt = (max) => Math.floor(Math.random() * max);
 
 const generateQuestion = () => {
   const numOne = getRandomInt(99) + 1;
   const twoNum = getRandomInt(50) + 1;
   return `${numOne} ${twoNum}`;
 };
-const gcd = (a, b) => {
+const getGcd = (a, b) => {
   while (b !== 0) {
     const temp = b;
     b = a % b;
@@ -22,7 +21,7 @@ const resolveQuestion = (question) => {
 
   const oneNum = Number(oneNumstr);
   const twoNum = Number(twoNumstr);
-  return gcd(oneNum, twoNum);
+  return getGcd(oneNum, twoNum);
 };
 
 const brainGcd = () => {

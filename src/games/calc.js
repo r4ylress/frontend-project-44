@@ -1,8 +1,7 @@
-import {
-  logickGame, askuserName, greeting,
-} from '../index.js';
+import logickGame from '../index.js';
+import getRandomInt from '../getRandomInt.js'
+import { greeting, askuserName } from '../cli.js';
 
-const getRandomInt = (max) => Math.floor(Math.random() * max);
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
   return operations[getRandomInt(operations.length)];
@@ -13,15 +12,15 @@ const answerCorrectCalc = (questi) => {
 
   switch (operation) {
     case '*':
-      return (Number(firstNum) * Number(secondNum)).toString();
+      return Number(firstNum) * Number(secondNum);
 
     case '+':
-      return (Number(firstNum) + Number(secondNum)).toString();
+      return Number(firstNum) + Number(secondNum);
 
     case '-':
-      return (Number(firstNum) - Number(secondNum)).toString();
+      return Number(firstNum) - Number(secondNum);
     default:
-      return console.log('error: undefined operation');
+      return null;
   }
 };
 
@@ -32,7 +31,7 @@ const generateQuestion = () => {
   return `${numOne} ${operator} ${twoNum}`;
 };
 
-const gameCalculator = () => {
+const brainCalculator = () => {
   const userName = askuserName();
   console.log(greeting(userName));
   console.log('What is the result of the expression?');
@@ -40,7 +39,7 @@ const gameCalculator = () => {
 
   for (let i = 0; i < 3; i += 1) {
     const question = generateQuestion();
-    const correctAnswer = String(Math.abs(answerCorrectCalc(question)));
+    const correctAnswer = String(answerCorrectCalc(question));
 
     const isCorrect = logickGame(userName, question, correctAnswer);
 
@@ -53,4 +52,4 @@ const gameCalculator = () => {
   }
 };
 
-export default gameCalculator;
+export default brainCalculator;

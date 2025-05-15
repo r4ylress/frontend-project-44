@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-import {
-  logickGame, askuserName, greeting,
-} from '../index.js';
+import { askuserName, greeting } from '../cli.js';
+import logickGame from '../index.js';
+import getRandomInt from '../getRandomInt.js';
+
 
 const isPrime = (num) => {
   if (num < 2) return false;
@@ -10,13 +11,13 @@ const isPrime = (num) => {
   }
   return true;
 };
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const random = (min, max) => getRandomInt(max - min + 1) + min;
 
 const brainPrime = () => {
   const userName = askuserName();
   console.log(greeting(userName));
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const question = random(1, 100);
     const correctAnswer = isPrime(question) ? 'yes' : 'no';
     const isCorrect = logickGame(userName, question, correctAnswer);
